@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Output Methods</title>
+    <style>
+      #output {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Output Methods</h1>
+
+    <!-- Output Area -->
+    <div id="output"></div>
+
+    <!-- Buttons to Demonstrate Output Methods -->
+    <button onclick="showConsoleLog()">Console Log</button>
+    <button onclick="showAlert()">Alert</button>
+    <button onclick="showDocumentWrite()">Document Write</button>
+    <button onclick="showDOMManipulation()">DOM Manipulation</button>
+
+    <script>
+      // Display output in the browser's console
+      function showConsoleLog() {
+        console.log("This is a message in the console!");
+      }
+
+      // Display output using an alert box
+      function showAlert() {
+        alert("This is an alert popup!");
+      }
+
+      // Display output using document.write
+      function showDocumentWrite() {
+        document.write("<h2>This is written using document.write()</h2>");
+      }
+
+      // Display output using DOM manipulation
+      function showDOMManipulation() {
+        document.getElementById("output").innerHTML =
+          "This is output using DOM manipulation!";
+      }
+    </script>
+  </body>
+</html>

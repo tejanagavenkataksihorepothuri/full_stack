@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denomination Calculator</title>
+</head>
+<body>
+    <h1>Denomination of Deposited Amount</h1>
+    <form id="denominationForm">
+        <label for="amount">Enter amount (in Rs.):</label>
+        <input type="number" id="amount" required>
+        <button type="submit">Calculate Denominations</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        document.getElementById("denominationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let amount = parseInt(document.getElementById("amount").value);
+            let denominations = [100, 50, 20, 10, 5, 2, 1];
+            let result = "";
+            
+            for (let denom of denominations) {
+                let count = Math.floor(amount / denom);
+                if (count > 0) {
+                    result += `${count} - ${denom}'s, `;
+                }
+                amount %= denom;
+            }
+            
+            if (result) {
+                result = result.slice(0, -2); // Remove the last comma and space
+                document.getElementById("result").textContent = result;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp Properties and Methods</title>
+</head>
+<body>
+    <h1>RegExp Properties and Methods Demo</h1>
+    <pre id="output"></pre>
+    <script>
+        let text = "JavaScript is a versatile programming language. JavaScript is widely used.";
+        let regex = /JavaScript/gi;
+        let output = "";
+        output += "Source: " + regex.source + "\n";
+        output += "Global flag: " + regex.global + "\n";
+        output += "Ignore case flag: " + regex.ignoreCase + "\n";
+        output += "Multiline flag: " + regex.multiline + "\n";
+        let matchResults = text.match(regex);
+        output += "Match results: " + matchResults + "\n";
+        let testResult = regex.test(text);
+        output += "Does the text contain 'JavaScript'? " + testResult + "\n";
+        let execResult = regex.exec(text);
+        output += "First match found using exec(): " + JSON.stringify(execResult) + "\n";
+        document.getElementById("output").textContent = output;
+    </script>
+</body>
+</html>

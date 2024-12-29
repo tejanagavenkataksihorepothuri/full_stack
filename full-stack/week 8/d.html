@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Through Object Data</title>
+</head>
+<body>
+    <h1>Print Object Data Using Different Loops</h1>
+    <div id="output"></div>
+    <script>
+        let person = {
+            name: "John",
+            age: 30,
+            job: "Developer"
+        };
+
+        let output = "<h2>Using for-in Loop</h2>";
+        for (let key in person) {
+            output += key + ": " + person[key] + "<br>";
+        }
+
+        output += "<h2>Using forEach Loop (on Object Entries)</h2>";
+        Object.entries(person).forEach(([key, value]) => {
+            output += key + ": " + value + "<br>";
+        });
+
+        output += "<h2>Using for-of Loop (on Object Entries)</h2>";
+        for (let [key, value] of Object.entries(person)) {
+            output += key + ": " + value + "<br>";
+        }
+
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

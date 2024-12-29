@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Selectors</title>
+    <style>
+      /* Simple Selectors */
+      p {
+        color: blue;
+      }
+      #unique {
+        color: red;
+      }
+      .class-name {
+        font-size: 18px;
+      }
+
+      /* Group Selector */
+      h1,
+      h2,
+      h3 {
+        font-family: Arial;
+      }
+
+      /* Combinator Selectors */
+      div > p {
+        background-color: yellow;
+      } /* Child */
+      div p {
+        color: green;
+      } /* Descendant */
+      p + p {
+        font-weight: bold;
+      } /* Adjacent Sibling */
+      p ~ p {
+        font-style: italic;
+      } /* General Sibling */
+
+      /* Pseudo-classes */
+      a:hover {
+        color: orange;
+      }
+
+      /* Pseudo-elements */
+      p::first-line {
+        text-transform: uppercase;
+      }
+
+      /* Attribute Selector */
+      input[type="text"] {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Selectors Example</h1>
+    <div>
+      <p>This is a paragraph inside div.</p>
+      <p>This is another paragraph inside div.</p>
+    </div>
+    <p id="unique">This is a paragraph with ID.</p>
+    <p class="class-name">This is a paragraph with a class.</p>
+    <a href="#">Hover over this link</a>
+    <p>This paragraph will have italic siblings.</p>
+    <input type="text" placeholder="Type here" />
+  </body>
+</html>

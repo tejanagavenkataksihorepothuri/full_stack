@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Numbers</title>
+</head>
+<body>
+    <h1>Print Numbers from 1 to 10</h1>
+    <div id="output"></div>
+    <script>
+        let output = "<h2>Using For Loop</h2>";
+        for (let i = 1; i <= 10; i++) {
+            output += i + " ";
+        }
+        output += "<h2>Using While Loop</h2>";
+        let j = 1;
+        while (j <= 10) {
+            output += j + " ";
+            j++;
+        }
+        output += "<h2>Using Do-While Loop</h2>";
+        let k = 1;
+        do {
+            output += k + " ";
+            k++;
+        } while (k <= 10);
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html> 

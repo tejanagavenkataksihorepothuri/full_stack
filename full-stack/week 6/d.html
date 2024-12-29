@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voting Eligibility</title>
+  </head>
+  <body>
+    <script>
+      let name = prompt("Enter your name:");
+      let age = prompt("Enter your age:");
+      document.write(
+        "<table border='1'><tr><th>Name</th><th>Age</th><th>Eligibility</th></tr>"
+      );
+      document.write(
+        "<tr><td>" +
+          name +
+          "</td><td>" +
+          age +
+          "</td><td>" +
+          (age >= 18 ? "Can Vote" : "Cannot Vote") +
+          "</td></tr></table>"
+      );
+    </script>
+  </body>
+</html>

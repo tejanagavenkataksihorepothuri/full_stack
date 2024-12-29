@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Check</title>
+</head>
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <form id="armstrongForm">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" required>
+        <button type="submit">Check</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        document.getElementById("armstrongForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let number = parseInt(document.getElementById("number").value);
+            let sum = 0;
+            let temp = number;
+            let digits = number.toString().length;
+
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += Math.pow(digit, digits);
+                temp = Math.floor(temp / 10);
+            }
+
+            let resultMessage = (sum === number) ? `${number} is an Armstrong number.` : `${number} is not an Armstrong number.`;
+            document.getElementById("result").textContent = resultMessage;
+        });
+    </script>
+</body>
+</html>

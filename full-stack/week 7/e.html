@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Properties and Methods</title>
+</head>
+<body>
+    <h1>String Properties and Methods Demo</h1>
+    <pre id="output"></pre>
+    <script>
+        let text = "  Hello, World! Welcome to JavaScript programming.  ";
+        let output = "";
+
+        output += "Original String: '" + text + "'\n";
+        output += "Length of string: " + text.length + "\n";
+        let trimmedText = text.trim();
+        output += "Trimmed String: '" + trimmedText + "'\n";
+        let upperCaseText = trimmedText.toUpperCase();
+        output += "Uppercase String: '" + upperCaseText + "'\n";
+        let lowerCaseText = trimmedText.toLowerCase();
+        output += "Lowercase String: '" + lowerCaseText + "'\n";
+        let firstOccurrence = trimmedText.indexOf("World");
+        output += "First occurrence of 'World': " + firstOccurrence + "\n";
+        let replacedText = trimmedText.replace("Hello", "Hi");
+        output += "Replaced String: '" + replacedText + "'\n";
+        let subString = trimmedText.substring(7, 12);
+        output += "Substring (7, 12): '" + subString + "'\n";
+        let splitWords = trimmedText.split(" ");
+        output += "Split into words: " + splitWords.join(", ") + "\n";
+        let includesWord = trimmedText.includes("JavaScript");
+        output += "Does it include 'JavaScript'? " + includesWord + "\n";
+        output += "Final Modified String: '" + replacedText + "'";
+
+        document.getElementById("output").textContent = output;
+    </script>
+</body>
+</html>

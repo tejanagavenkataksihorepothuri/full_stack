@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Object Properties and Methods</title>
+    <style>
+        #info {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Object Properties and Methods</h1>
+    <div id="info"></div>
+    <button onclick="displayArrayInfo()">Show Array Info</button>
+    <script>
+        function displayArrayInfo() {
+            const infoDiv = document.getElementById('info');
+            const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+
+            const length = fruits.length;
+            const firstElement = fruits[0];
+            const lastElement = fruits[fruits.length - 1];
+
+            fruits.push("Fig");
+            const afterPush = fruits.join(", ");
+
+            const removedElement = fruits.pop();
+            const afterPop = fruits.join(", ");
+
+            infoDiv.innerHTML = `
+                <h2>Array Information</h2>
+                <p><strong>Original Array:</strong> Apple, Banana, Cherry, Date, Elderberry</p>
+                <p><strong>Array Length:</strong> ${length}</p>
+                <p><strong>First Element:</strong> ${firstElement}</p>
+                <p><strong>Last Element:</strong> ${lastElement}</p>
+                <p><strong>After Push:</strong> ${afterPush}</p>
+                <p><strong>Removed Element (Pop):</strong> ${removedElement}</p>
+                <p><strong>After Pop:</strong> ${afterPop}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

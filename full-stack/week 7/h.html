@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User-Defined Object Demo</title>
+  </head>
+  <body>
+    <h1>User-Defined Object in JavaScript</h1>
+    <pre id="output"></pre>
+    <script>
+      class Person {
+        constructor(firstName, lastName, age) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = age;
+        }
+
+        // Method to get full name
+        getFullName() {
+          return this.firstName + " " + this.lastName;
+        }
+
+        // Getter for age
+        get personAge() {
+          return this.age;
+        }
+
+        // Setter for age
+        set personAge(newAge) {
+          if (newAge > 0) {
+            this.age = newAge;
+          } else {
+            console.error("Age must be positive.");
+          }
+        }
+
+        // Display method to show details
+        display() {
+          return `Name: ${this.getFullName()}\nAge: ${this.age}`;
+        }
+      }
+
+      // Create an instance of Person
+      let person1 = new Person("John", "Doe", 30);
+
+      // Access properties and methods
+      let output = "";
+      output += "Full Name: " + person1.getFullName() + "\n";
+      output += "Age: " + person1.personAge + "\n";
+
+      // Modify age using setter
+      person1.personAge = 35;
+
+      // Display updated details
+      output += "Updated Age: " + person1.personAge + "\n";
+      output += "Details:\n" + person1.display();
+
+      document.getElementById("output").textContent = output;
+    </script>
+  </body>
+</html>

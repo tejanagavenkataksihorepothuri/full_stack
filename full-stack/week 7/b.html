@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Object Properties and Methods</title>
+    <style>
+      #info {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Window Object Properties and Methods</h1>
+    <div id="info"></div>
+    <button onclick="displayWindowInfo()">Show Window Info</button>
+    <button onclick="openNewWindow()">Open New Window</button>
+    <button onclick="closeWindow()">Close Window</button>
+    <script>
+      let newWindow;
+
+      function displayWindowInfo() {
+        const infoDiv = document.getElementById("info");
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const locationHref = window.location.href;
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+        infoDiv.innerHTML = `
+                <h2>Window Information</h2>
+                <p><strong>Window Width:</strong> ${width}px</p>
+                <p><strong>Window Height:</strong> ${height}px</p>
+                <p><strong>Current URL:</strong> ${locationHref}</p>
+                <p><strong>Screen Width:</strong> ${screenWidth}px</p>
+                <p><strong>Screen Height:</strong> ${screenHeight}px</p>
+            `;
+      }
+
+      function openNewWindow() {
+        newWindow = window.open(
+          "https://www.example.com",
+          "ExampleWindow",
+          "width=600,height=400"
+        );
+      }
+
+      function closeWindow() {
+        if (newWindow && !newWindow.closed) {
+          newWindow.close();
+        } else {
+          alert("No window to close or the window is already closed.");
+        }
+      }
+    </script>
+  </body>
+</html>

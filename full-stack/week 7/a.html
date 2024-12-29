@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Properties and Methods</title>
+    <style>
+        #info {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Object Properties and Methods</h1>
+    <div id="info"></div>
+    <button onclick="displayDocumentInfo()">Show Document Info</button>
+    <script>
+        function displayDocumentInfo() {
+            const infoDiv = document.getElementById('info');
+            const title = document.title;
+            const url = document.URL;
+            const lastModified = document.lastModified;
+            const domain = document.domain;
+            infoDiv.innerHTML = `
+                <h2>Document Information</h2>
+                <p><strong>Title:</strong> ${title}</p>
+                <p><strong>URL:</strong> ${url}</p>
+                <p><strong>Last Modified:</strong> ${lastModified}</p>
+                <p><strong>Domain:</strong> ${domain}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

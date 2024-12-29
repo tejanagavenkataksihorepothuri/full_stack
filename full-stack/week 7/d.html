@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object Properties and Methods</title>
+    <style>
+        #info {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Object Properties and Methods</h1>
+    <div id="info"></div>
+    <button onclick="displayMathInfo()">Show Math Info</button>
+    <script>
+        function displayMathInfo() {
+            const infoDiv = document.getElementById('info');
+
+            const pi = Math.PI;
+            const sqrt = Math.sqrt(16);
+            const random = Math.random();
+            const rounded = Math.round(4.6);
+            const max = Math.max(10, 20, 30);
+            const min = Math.min(10, 20, 30);
+
+            infoDiv.innerHTML = `
+                <h2>Math Object Information</h2>
+                <p><strong>Value of PI:</strong> ${pi}</p>
+                <p><strong>Square Root of 16:</strong> ${sqrt}</p>
+                <p><strong>Random Number (0-1):</strong> ${random}</p>
+                <p><strong>Rounded Value of 4.6:</strong> ${rounded}</p>
+                <p><strong>Maximum of (10, 20, 30):</strong> ${max}</p>
+                <p><strong>Minimum of (10, 20, 30):</strong> ${min}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

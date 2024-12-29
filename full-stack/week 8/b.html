@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekdays Display</title>
+</head>
+<body>
+    <h1>Display Weekday</h1>
+    <form id="dayForm">
+        <label for="dayNumber">Enter a number (1-7):</label>
+        <input type="number" id="dayNumber" min="1" max="7" required>
+        <button type="submit">Show Day</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        document.getElementById("dayForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let dayNumber = parseInt(document.getElementById("dayNumber").value);
+            let dayName;
+            switch (dayNumber) {
+                case 1: dayName = "Sunday"; break;
+                case 2: dayName = "Monday"; break;
+                case 3: dayName = "Tuesday"; break;
+                case 4: dayName = "Wednesday"; break;
+                case 5: dayName = "Thursday"; break;
+                case 6: dayName = "Friday"; break;
+                case 7: dayName = "Saturday"; break;
+                default: dayName = "Invalid number! Please enter a number between 1 and 7.";
+            }
+            document.getElementById("result").textContent = dayName;
+        });
+    </script>
+</body>
+</html>
